@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+    width: 340px;
+}
+
+.theme-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.switch {
+    width: 60px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.switch::before {
+    content: '☀️';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.switch.dark::before {
+    content: '🌙';
+    transform: translateX(30px);
+    background: #333;
+}
+
+#display {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 36px;
+    text-align: right;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background: rgba(255, 165, 0, 0.5);
+}
+
+.operator:hover {
+    background: rgba(255, 165, 0, 0.7);
+}
+
+.function {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#zero {
+    grid-column: span 2;
+}
+
+.dark-mode {
+    background: linear-gradient(135deg, #1a1a1a 0%, #363636 100%);
+}
+
+.dark-mode .calculator {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 400px) {
+    .calculator {
+        width: 100%;
+        margin: 0 20px;
+    }
+}
